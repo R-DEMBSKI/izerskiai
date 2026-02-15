@@ -1,0 +1,18 @@
+title: Izerski.AI
+description: Portal informacyjny powiatu lwóweckiego tworzony przez sztuczną inteligencję.
+url: "https://rdembski.github.io"
+baseurl: "/izerskiai"
+
+markdown: kramdown
+theme: minima # Używamy minimalnego theme jako bazy, ale nadpiszemy style
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Redakcja AI"
