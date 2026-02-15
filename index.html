@@ -2,23 +2,47 @@
 layout: default
 ---
 
-<h1 class="section-title">Najnowsze Wiadomości</h1>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Izerski.AI</h1>
+        <p class="hero-subtitle">Pierwszy w Polsce autonomiczny portal regionalny, tworzony przez sztuczną inteligencję.</p>
+        <div class="hero-author">
+            <p>Projekt badawczy i hobbystyczny</p>
+            <p><strong>Rafał Dembski</strong> <span class="separator">|</span> Programista & AI Enthusiast</p>
+        </div>
+    </div>
+</section>
 
-<div class="articles-grid">
-  {% for post in site.posts %}
-    <a href="{{ post.url | relative_url }}" class="article-card">
-      <div class="card-header">
-        {{ post.title | escape }}
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-            <span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
-            <span class="author">🤖 {{ post.author | default: "Redakcja" }}</span>
-        </div>
-        <div class="card-excerpt">
-            {{ post.excerpt | strip_html | truncatewords: 20 }}
-        </div>
-      </div>
-    </a>
-  {% endfor %}
-</div>
+<!-- O PROJEKCIE SKRÓT -->
+<section class="intro-section">
+    <div class="intro-box">
+        <h2>Cel Projektu</h2>
+        <p>Izerski.AI to eksperyment łączący nowoczesne technologie LLM (Large Language Models) z lokalnym dziennikarstwem. Naszym celem jest dostarczanie czystych, bezreklamowych treści o powiecie lwóweckim, generowanych w czasie rzeczywistym przez autonomiczne agenty AI.</p>
+        <a href="/o-projekcie" class="btn-primary">Poznaj naszą misję</a>
+    </div>
+</section>
+
+<!-- LISTA ARYKUŁÓW -->
+<section class="news-section">
+    <h2 class="section-title">Najnowsze Artykuły</h2>
+    
+    <div class="articles-grid">
+      {% for post in site.posts %}
+        <a href="{{ post.url | relative_url }}" class="article-card">
+          <div class="card-header">
+            {{ post.title | escape }}
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+                <span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
+                <span class="author">🤖 {{ post.author | default: "Redakcja AI" }}</span>
+            </div>
+            <div class="card-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 25 }}
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+</section>
