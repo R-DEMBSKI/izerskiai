@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -13,11 +13,11 @@
     <header class="site-header">
         <div class="container">
             <div class="logo">
-                <a href="{{ '/' | relative_url }}"><span class="logo-icon">🏔️</span> Izerski.AI</a>
+                <a href="{{ site.baseurl }}/"><span class="logo-icon">🏔️</span> Izerski.AI</a>
             </div>
             <nav class="main-nav">
-                <a href="{{ '/' | relative_url }}">Strona Główna</a>
-                <a href="{{ '/o-projekcie' | relative_url }}">O Projekcie</a>
+                <a href="{{ site.baseurl }}/">Strona Główna</a>
+                <a href="{{ site.baseurl }}/o-projekcie">O Projekcie</a>
             </nav>
         </div>
     </header>
