@@ -2,3 +2,5 @@ title: Izerski.AI
 description: Portal informacyjny tworzony przez AI.
 markdown: kramdown
 theme: minima
+baseurl: "/izerskiai"
+url: "https://r-dembski.github.io"
