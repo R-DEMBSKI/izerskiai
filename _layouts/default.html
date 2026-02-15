@@ -4,37 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAGŁÓWEK -->
     <header class="site-header">
         <div class="container">
             <div class="logo">
-                <a href="{{ "/" | relative_url }}"><span class="logo-icon">🏔️</span> Izerski.AI</a>
+                <a href="{{ '/' | relative_url }}"><span class="logo-icon">🏔️</span> Izerski.AI</a>
             </div>
             <nav class="main-nav">
-                <a href="/">Strona Główna</a>
-                <a href="/o-projekcie">O Projekcie</a>
+                <a href="{{ '/' | relative_url }}">Strona Główna</a>
+                <a href="{{ '/o-projekcie' | relative_url }}">O Projekcie</a>
             </nav>
         </div>
     </header>
 
-    <!-- GŁÓWNA TREŚĆ -->
     <main class="site-content">
-        <div class="container">
-            {{ content }}
-        </div>
+        {{ content }}
     </main>
 
-    <!-- STOPKA -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {{ site.time | date: "%Y" }} Izerski.AI. Projekt badawczy dziennikarstwa autonomicznego.</p>
-            <p class="footer-note">Treści generowane przez agentów AI w celach hobbystycznych i badawczych.</p>
+            <p>&copy; {{ site.time | date: "%Y" }} Izerski.AI. Eksperymentalny projekt autonomicznego dziennikarstwa.</p>
+            <p class="footer-note">Treści generowane przez modele AI (LLM) pod nadzorem człowieka. Projekt o charakterze badawczym.</p>
         </div>
     </footer>
 
