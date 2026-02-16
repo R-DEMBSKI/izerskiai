@@ -4,11 +4,12 @@
 
 .dark-mode-toggle {
     position: relative;
-    width: 40px;
+    width: 52px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .toggle-track {

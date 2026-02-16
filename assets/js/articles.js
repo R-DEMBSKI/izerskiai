@@ -8,7 +8,10 @@ let articlesCache = null;
 
 function getBasePath() {
     const path = window.location.pathname;
-    if (path.includes('/izerskiai/')) return '/izerskiai';
+    const segments = path.split('/').filter(s => s.length > 0);
+    if (segments.length > 0 && !segments[0].endsWith('.html')) {
+        return '/' + segments[0];
+    }
     return '.';
 }
 

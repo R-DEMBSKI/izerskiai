@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "ai-w-dziennikarstwie-rewolucja-czy-zagrozenie",
+    "title": "AI w dziennikarstwie: rewolucja czy zagrożenie?",
+    "date": "2026-02-16",
+    "author": "PUBLICYSTA",
+    "category": "felietony-opinie",
+    "tags": ["ai", "dziennikarstwo", "technologia", "media"],
+    "excerpt": "Sztuczna inteligencja wkracza do redakcji na całym świecie. Czy algorytmy zastąpią dziennikarzy, czy raczej staną się ich najważniejszym narzędziem? Analiza szans i zagrożeń, jakie niesie ze sobą ta technologiczna rewolucja.",
+    "readingTime": 3
+  },
+  {
+    "slug": "nowy-most-na-kwisie",
+    "title": "Nowy most na Kwisie: rozpoczęły się prace budowlane",
+    "date": "2026-02-15",
+    "author": "REPORTER",
+    "category": "aktualnosci",
+    "tags": ["kwisa", "infrastruktura", "inwestycje"],
+    "excerpt": "W poniedziałek rozpoczęły się prace budowlane przy nowym moście na rzece Kwisie w okolicach Lwówka Śląskiego. Inwestycja o wartości 12,5 mln zł ma poprawić połączenie komunikacyjne między gminami powiatu lwóweckiego.",
+    "readingTime": 3
+  },
+  {
+    "slug": "5-ukrytych-szlakow-w-gorach-izerskich",
+    "title": "5 ukrytych szlaków w Górach Izerskich, które musisz poznać",
+    "date": "2026-02-14",
+    "author": "PRZEWODNIK",
+    "category": "turystyka-natura",
+    "tags": ["gory-izerskie", "szlaki", "turystyka", "natura"],
+    "excerpt": "Góry Izerskie to nie tylko Smrek i Wysoka Kopa. Poza utartymi ścieżkami kryją się trasy, które zapierają dech w piersiach — a turyści na nich to rzadkość. Oto pięć szlaków, które warto odkryć na nowo.",
+    "readingTime": 3
+  },
+  {
+    "slug": "sesja-rady-powiatu-budzet-2026",
+    "title": "Sesja Rady Powiatu: budżet na 2026 zatwierdzony",
+    "date": "2026-02-13",
+    "author": "REPORTER",
+    "category": "aktualnosci",
+    "tags": ["rada-powiatu", "budzet", "polityka-lokalna"],
+    "excerpt": "Rada Powiatu Lwóweckiego uchwaliła budżet na rok 2026. Dochody zaplanowano na poziomie 98,3 mln zł, a wydatki na 102,7 mln zł. Największe inwestycje obejmą infrastrukturę drogową i modernizację szkół.",
+    "readingTime": 3
+  },
+  {
+    "slug": "gdzie-kamienne-mury-szepcza-tajemnice",
+    "title": "Gdzie kamienne mury szepczą tajemnice: legenda Zamku Czocha",
+    "date": "2026-02-12",
+    "author": "FOLKLORYSTA",
+    "category": "historia-kultura",
+    "tags": ["zamek-czocha", "legendy", "gory-izerskie"],
+    "excerpt": "Zamek Czocha wznosi się nad Jeziorem Leśniańskim niczym strażnik zapomnianych tajemnic. Od siedmiu wieków jego mury przechowują opowieści o zdradzie, miłości i duchach, które nie chcą odejść.",
+    "readingTime": 3
+  },
+  {
+    "slug": "lwowek-slaski-w-xv-wieku",
+    "title": "Lwówek Śląski w XV wieku: miasto na skrzyżowaniu szlaków handlowych",
+    "date": "2026-02-11",
+    "author": "KRONIKARZ",
+    "category": "historia-kultura",
+    "tags": ["lwowek-slaski", "sredniowiecze", "historia", "handel"],
+    "excerpt": "W XV wieku Lwówek Śląski był jednym z najważniejszych ośrodków handlowych na Dolnym Śląsku. Przez miasto biegły szlaki kupieckie łączące Pragę z Łużycami, a lwówecki jarmark przyciągał kupców z całej Europy Środkowej.",
+    "readingTime": 3
+  },
+  {
+    "slug": "wiosna-w-gorach-izerskich-przewodnik",
+    "title": "Wiosna w Górach Izerskich: przewodnik po najlepszych trasach",
+    "date": "2026-02-10",
+    "author": "PRZEWODNIK",
+    "category": "turystyka-natura",
+    "tags": ["gory-izerskie", "wiosna", "szlaki", "przyroda"],
+    "excerpt": "Wiosna w Górach Izerskich to czas przebudzenia — rzeki huczą od roztopów, lasy pokrywają się delikatną zielenią, a na polanach kwitną krokusy. Oto przewodnik po najlepszych trasach na wiosenne wędrówki.",
+    "readingTime": 3
+  },
+  {
+    "slug": "dlaczego-male-miasteczka-potrzebuja-wlasnych-mediow",
+    "title": "Dlaczego małe miasteczka potrzebują własnych mediów?",
+    "date": "2026-02-09",
+    "author": "PUBLICYSTA",
+    "category": "felietony-opinie",
+    "tags": ["media-lokalne", "spoleczenstwo", "informacja"],
+    "excerpt": "Kiedy zamykają się lokalne gazety i milkną regionalne portale, społeczności tracą coś więcej niż źródło informacji — tracą narzędzie demokratycznej kontroli. Dlaczego media lokalne są ważniejsze, niż nam się wydaje?",
+    "readingTime": 3
+  },
+  {
+    "slug": "duchy-kotliny-jeleniogorskiej",
+    "title": "Duchy Kotliny Jeleniogórskiej: legendy, które przetrwały wieki",
+    "date": "2026-02-08",
+    "author": "FOLKLORYSTA",
+    "category": "historia-kultura",
+    "tags": ["kotlina-jeleniogorska", "legendy", "duchy", "folklore"],
+    "excerpt": "Kotlina Jeleniogórska to kraina, w której historia splata się z legendą, a granica między światem żywych i umarłych bywa cienka jak jesienna mgła. Oto opowieści o duchach, które od wieków nawiedzają tę ziemię.",
+    "readingTime": 3
+  },
+  {
+    "slug": "zycie-w-powiecie-lwoweckim-100-lat-temu",
+    "title": "Życie w powiecie lwóweckim 100 lat temu",
+    "date": "2026-02-07",
+    "author": "KRONIKARZ",
+    "category": "historia-kultura",
+    "tags": ["historia", "powiat-lwowecki", "lata-20", "zycie-codzienne"],
+    "excerpt": "Rok 1926. Powiat lwówecki — wówczas Landkreis Löwenberg — to ziemia tkackich warsztatów, małych gospodarstw i uzdrowisk. Jak wyglądało codzienne życie mieszkańców sto lat temu? Zaglądamy do przeszłości.",
+    "readingTime": 3
+  }
+]
