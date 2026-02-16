@@ -1,0 +1,40 @@
+/* ============================================
+   Home Page Specific Styles
+   ============================================ */
+
+/* === Featured article section === */
+.home-featured {
+    margin-bottom: var(--space-12);
+}
+
+/* === Latest articles section === */
+.home-latest {
+    margin-bottom: var(--space-12);
+}
+
+.home-latest .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.home-latest .section-header .btn-ghost {
+    margin-bottom: 4px;
+}
+
+/* === Section highlights === */
+.section-highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+    .section-highlights {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

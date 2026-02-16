@@ -1,0 +1,185 @@
+/* ============================================
+   Single Article Page
+   ============================================ */
+
+/* === Reading progress bar === */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--color-accent);
+    z-index: 200;
+    transition: width 80ms linear;
+}
+
+/* === Article header === */
+.article-header {
+    text-align: center;
+    padding: var(--space-10) 0 var(--space-8);
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+}
+
+.article-category-badge {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.article-category-badge[data-category="aktualnosci"] {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--color-news);
+}
+.article-category-badge[data-category="historia-kultura"] {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--color-history);
+}
+.article-category-badge[data-category="turystyka-natura"] {
+    background: rgba(5, 150, 105, 0.1);
+    color: var(--color-tourism);
+}
+.article-category-badge[data-category="felietony-opinie"] {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--color-opinion);
+}
+
+.article-title {
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-5);
+}
+
+@media (min-width: 768px) {
+    .article-title {
+        font-size: var(--text-4xl);
+    }
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}
+
+.article-meta-divider {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-border-hover);
+}
+
+/* === Article content === */
+.article-content {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.article-body {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.article-body h2 {
+    font-size: var(--text-2xl);
+    margin: var(--space-10) 0 var(--space-4);
+}
+
+.article-body h3 {
+    font-size: var(--text-xl);
+    margin: var(--space-8) 0 var(--space-3);
+}
+
+.article-body p {
+    margin-bottom: var(--space-5);
+}
+
+.article-body ul,
+.article-body ol {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+}
+
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+
+.article-body li {
+    margin-bottom: var(--space-2);
+}
+
+.article-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.article-body a:hover {
+    color: var(--color-accent-hover);
+}
+
+/* === Article footer === */
+.article-footer {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: var(--space-8) var(--container-padding) 0;
+}
+
+/* === Sources section === */
+.article-sources {
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-bg-subtle);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: var(--space-8);
+}
+
+.article-sources h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-2);
+}
+
+.article-sources p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* === Tags === */
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-6) 0;
+}
+
+.article-tag {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    background: var(--color-bg-hover);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.article-tag:hover {
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+}
+
+/* === Related articles === */
+.related-articles {
+    padding: var(--space-12) 0;
+}

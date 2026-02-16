@@ -1,0 +1,94 @@
+/* ============================================
+   Site Footer
+   ============================================ */
+
+.site-footer {
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+    padding: var(--space-12) 0 var(--space-8);
+    margin-top: var(--space-16);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+}
+
+@media (min-width: 640px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* === Footer brand === */
+.footer-brand .footer-logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.footer-brand .footer-logo .logo-dot {
+    color: var(--color-accent);
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    max-width: 320px;
+}
+
+/* === Footer nav columns === */
+.footer-nav h4,
+.footer-info h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-4);
+}
+
+.footer-nav a,
+.footer-info a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    padding: var(--space-1) 0;
+    transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-info a:hover {
+    color: #ffffff;
+}
+
+/* === Footer bottom === */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--text-xs);
+    margin: 0;
+}
+
+.footer-note {
+    font-style: italic;
+}

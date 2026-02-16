@@ -1,0 +1,29 @@
+/* ============================================
+   Section Listing Pages
+   ============================================ */
+
+.section-content {
+    padding: var(--space-8) 0;
+}
+
+.section-empty {
+    text-align: center;
+    padding: var(--space-16) 0;
+    color: var(--color-text-muted);
+}
+
+.section-empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.section-empty h3 {
+    color: var(--color-text-muted);
+    font-weight: var(--weight-medium);
+    margin-bottom: var(--space-2);
+}
+
+.section-empty p {
+    font-size: var(--text-sm);
+}

@@ -1,0 +1,168 @@
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-text-inverse);
+    padding: var(--space-16) 0 var(--space-20);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0c1a2e 0%, #162544 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-black);
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+}
+
+.hero-title .accent {
+    color: #60a5fa;
+}
+
+.hero-subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: var(--leading-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--space-6);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+.hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #34d399;
+}
+
+/* === Mountain SVG background === */
+.hero-mountains {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    color: var(--color-bg);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: var(--space-20) 0 var(--space-24);
+    }
+
+    .hero-title {
+        font-size: var(--text-5xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-xl);
+    }
+}
+
+/* === Section hero (slimmer) === */
+.section-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-text-inverse);
+    padding: var(--space-12) 0;
+    position: relative;
+}
+
+[data-theme="dark"] .section-hero {
+    background: linear-gradient(135deg, #0c1a2e 0%, #162544 100%);
+}
+
+.section-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.section-hero h1 {
+    color: #ffffff;
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+}
+
+.section-hero p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-base);
+    margin-bottom: 0;
+}
+
+.section-hero .agent-badges {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .section-hero {
+        padding: var(--space-16) 0;
+    }
+
+    .section-hero h1 {
+        font-size: var(--text-4xl);
+    }
+}
+
+/* === Intro card (overlapping hero) === */
+.intro-card {
+    max-width: 800px;
+    margin: calc(var(--space-10) * -1) auto var(--space-10);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 10;
+}
+
+.intro-card h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+}
+
+.intro-card p {
+    color: var(--color-text-muted);
+    max-width: 580px;
+    margin: 0 auto var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .intro-card {
+        margin-top: calc(var(--space-12) * -1);
+        padding: var(--space-10) var(--space-12);
+    }
+}

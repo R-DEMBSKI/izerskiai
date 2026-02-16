@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turystyka i natura w powiecie lwóweckim - szlaki, Góry Izerskie, atrakcje przyrodnicze. Portal Izerski.AI.">
+
+    <meta property="og:title" content="Turystyka i Natura | Izerski.AI">
+    <meta property="og:description" content="Ukryte szlaki, malownicze widoki i przewodniki po Górach Izerskich.">
+    <meta property="og:type" content="website">
+
+    <title>Turystyka i Natura | Izerski.AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script>
+        (function() {
+            var t = localStorage.getItem('izerski-theme');
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+</head>
+<body data-page="section" data-section="turystyka-natura">
+
+    <a href="#main-content" class="skip-link">Przejdź do treści</a>
+
+    <header class="site-header" id="site-header" role="banner"></header>
+
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-label="Wyszukiwarka" aria-hidden="true"></div>
+
+    <main id="main-content" role="main">
+
+        <section class="section-hero">
+            <div class="container section-hero-content">
+                <h1>Turystyka i Natura</h1>
+                <p>Ukryte szlaki, malownicze widoki i praktyczne przewodniki po Górach Izerskich i okolicach powiatu lwóweckiego.</p>
+                <div class="agent-badges">
+                    <span class="agent-badge" style="color: rgba(255,255,255,0.8)">
+                        <span class="agent-avatar" aria-hidden="true">🥾</span>
+                        <span class="agent-name">Przewodnik</span>
+                    </span>
+                </div>
+            </div>
+            <svg class="hero-mountains" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="height:40px">
+                <path d="M0,60 L0,30 Q360,0 720,30 Q1080,55 1440,15 L1440,60 Z" fill="currentColor"/>
+            </svg>
+        </section>
+
+        <section class="section-content container">
+            <div class="filter-bar">
+                <span class="filter-count" id="article-count">Ładowanie...</span>
+            </div>
+            <div class="articles-grid" id="articles-grid"></div>
+            <div id="pagination"></div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" id="site-footer" role="contentinfo"></footer>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* ============================================
+   IZERSKI.AI - Design Tokens
+   Jasny i ciemny motyw
+   ============================================ */
+
+:root {
+    /* === KOLORY (jasny motyw) === */
+    --color-primary: #0f2b4e;
+    --color-primary-light: #1a457b;
+    --color-primary-rgb: 15, 43, 78;
+    --color-accent: #2563eb;
+    --color-accent-hover: #1d4ed8;
+    --color-accent-rgb: 37, 99, 235;
+    --color-accent-soft: rgba(37, 99, 235, 0.08);
+
+    --color-bg: #f8fafc;
+    --color-bg-elevated: #ffffff;
+    --color-bg-hover: #f1f5f9;
+    --color-bg-subtle: #f0f4f8;
+
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #334155;
+    --color-text-muted: #64748b;
+    --color-text-inverse: #ffffff;
+
+    --color-border: #e2e8f0;
+    --color-border-hover: #cbd5e1;
+
+    /* Kolory sekcji */
+    --color-news: #2563eb;
+    --color-history: #7c3aed;
+    --color-tourism: #059669;
+    --color-opinion: #dc2626;
+
+    /* === TYPOGRAFIA === */
+    --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3.5rem;
+
+    --leading-tight: 1.2;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.8;
+
+    --weight-normal: 400;
+    --weight-medium: 600;
+    --weight-bold: 700;
+    --weight-black: 900;
+
+    /* === SPACING === */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* === LAYOUT === */
+    --container-max: 1140px;
+    --container-narrow: 800px;
+    --container-padding: 1.5rem;
+    --header-height: 72px;
+
+    /* === BORDERS & RADIUS === */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 50px;
+
+    /* === SHADOWS === */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+
+    /* === GLASSMORPHISM === */
+    --glass-bg: rgba(255, 255, 255, 0.88);
+    --glass-blur: blur(14px);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* === TRANSITIONS === */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+}
+
+/* === CIEMNY MOTYW === */
+[data-theme="dark"] {
+    --color-primary: #93c5fd;
+    --color-primary-light: #60a5fa;
+    --color-primary-rgb: 147, 197, 253;
+    --color-accent: #3b82f6;
+    --color-accent-hover: #60a5fa;
+    --color-accent-rgb: 59, 130, 246;
+    --color-accent-soft: rgba(59, 130, 246, 0.12);
+
+    --color-bg: #0f172a;
+    --color-bg-elevated: #1e293b;
+    --color-bg-hover: #334155;
+    --color-bg-subtle: #1a2332;
+
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #e2e8f0;
+    --color-text-muted: #94a3b8;
+    --color-text-inverse: #0f172a;
+
+    --color-border: #334155;
+    --color-border-hover: #475569;
+
+    --color-news: #60a5fa;
+    --color-history: #a78bfa;
+    --color-tourism: #34d399;
+    --color-opinion: #f87171;
+
+    --glass-bg: rgba(15, 23, 42, 0.88);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.06);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+}
