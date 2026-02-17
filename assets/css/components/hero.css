@@ -1,15 +1,16 @@
 /* ============================================
-   Hero Section
+   Hero Section - Enhanced with Mountain Scene
    ============================================ */
 
 .hero {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: var(--color-text-inverse);
-    padding: var(--space-16) 0 var(--space-20);
+    padding: var(--space-20) 0 var(--space-24);
     margin-top: calc(var(--header-height) * -1);
-    padding-top: calc(var(--header-height) + var(--space-16));
+    padding-top: calc(var(--header-height) + var(--space-20));
     position: relative;
     overflow: hidden;
+    min-height: 540px;
 }
 
 [data-theme="dark"] .hero {
@@ -18,7 +19,7 @@
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     text-align: center;
     max-width: 740px;
     margin: 0 auto;
@@ -39,10 +40,63 @@
 
 .hero-subtitle {
     font-size: var(--text-lg);
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.8);
     line-height: var(--leading-relaxed);
     max-width: 600px;
-    margin: 0 auto var(--space-6);
+    margin: 0 auto var(--space-8);
+}
+
+/* === Hero CTA buttons === */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-6);
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+}
+
+.hero-btn-primary {
+    background: #ffffff;
+    color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hero-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .hero-badge {
@@ -65,7 +119,7 @@
     background: #34d399;
 }
 
-/* === Mountain SVG background === */
+/* === Mountain SVG transition to page content === */
 .hero-mountains {
     position: absolute;
     bottom: -1px;
@@ -73,13 +127,42 @@
     right: 0;
     width: 100%;
     height: auto;
-    z-index: 1;
+    z-index: 5;
     color: var(--color-bg);
+}
+
+/* === Stats bar === */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-black);
+    color: #ffffff;
+}
+
+.hero-stat-label {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 @media (min-width: 768px) {
     .hero {
-        padding: var(--space-20) 0 var(--space-24);
+        padding: var(--space-24) 0;
+        padding-top: calc(var(--header-height) + var(--space-24));
+        min-height: 620px;
     }
 
     .hero-title {
@@ -91,14 +174,39 @@
     }
 }
 
+@media (max-width: 640px) {
+    .hero {
+        min-height: 480px;
+        padding-bottom: var(--space-20);
+    }
+
+    .hero-stats {
+        gap: var(--space-4);
+    }
+
+    .hero-stat-value {
+        font-size: var(--text-xl);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* === Section hero (slimmer) === */
 .section-hero {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: var(--color-text-inverse);
-    padding: var(--space-12) 0;
+    padding: var(--space-12) 0 var(--space-10);
     margin-top: calc(var(--header-height) * -1);
     padding-top: calc(var(--header-height) + var(--space-12));
     position: relative;
+    overflow: hidden;
 }
 
 [data-theme="dark"] .section-hero {
@@ -131,7 +239,7 @@
 
 @media (min-width: 768px) {
     .section-hero {
-        padding: var(--space-16) 0;
+        padding: var(--space-16) 0 var(--space-12);
     }
 
     .section-hero h1 {
@@ -142,13 +250,13 @@
 /* === Intro card (overlapping hero) === */
 .intro-card {
     max-width: 800px;
-    margin: calc(var(--space-10) * -1) auto var(--space-10);
+    margin: calc(var(--space-12) * -1) auto var(--space-10);
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--space-8) var(--space-6);
     text-align: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
     position: relative;
     z-index: 10;
 }
@@ -166,7 +274,7 @@
 
 @media (min-width: 768px) {
     .intro-card {
-        margin-top: calc(var(--space-12) * -1);
+        margin-top: calc(var(--space-16) * -1);
         padding: var(--space-10) var(--space-12);
     }
 }

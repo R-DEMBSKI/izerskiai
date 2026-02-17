@@ -1,0 +1,240 @@
+/* ============================================
+   Mountain Scene - Animated Parallax Landscape
+   Spectacular WOW effect for Izerski.AI
+   ============================================ */
+
+/* === Scene container === */
+.mountain-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.mtn-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+/* === Stars (dark mode) === */
+.mtn-stars {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+[data-theme="dark"] .mtn-stars {
+    opacity: 1;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: starTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* === Aurora / Northern Lights === */
+.mtn-aurora {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+[data-theme="dark"] .mtn-aurora {
+    opacity: 1;
+}
+
+.aurora-band {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    mix-blend-mode: screen;
+}
+
+.aurora-band-1 {
+    width: 500px;
+    height: 120px;
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.15), rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    top: 10%;
+    left: 10%;
+    animation: auroraFloat1 12s ease-in-out infinite;
+}
+
+.aurora-band-2 {
+    width: 400px;
+    height: 80px;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08));
+    top: 15%;
+    right: 15%;
+    animation: auroraFloat2 15s ease-in-out infinite;
+}
+
+.aurora-band-3 {
+    width: 350px;
+    height: 60px;
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.08), rgba(59, 130, 246, 0.06));
+    top: 5%;
+    left: 40%;
+    animation: auroraFloat3 18s ease-in-out infinite;
+}
+
+@keyframes auroraFloat1 {
+    0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.6; }
+    33% { transform: translateX(40px) scaleX(1.1); opacity: 0.9; }
+    66% { transform: translateX(-30px) scaleX(0.95); opacity: 0.5; }
+}
+
+@keyframes auroraFloat2 {
+    0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.5; }
+    50% { transform: translateX(-50px) scaleX(1.15); opacity: 0.8; }
+}
+
+@keyframes auroraFloat3 {
+    0%, 100% { transform: translateX(0); opacity: 0.4; }
+    40% { transform: translateX(30px); opacity: 0.7; }
+    80% { transform: translateX(-20px); opacity: 0.3; }
+}
+
+/* === Clouds === */
+.mtn-clouds {
+    z-index: 2;
+}
+
+.cloud {
+    position: absolute;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.cloud svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cloud-1 {
+    width: 250px;
+    top: 15%;
+    left: -260px;
+    animation: cloudDrift 45s linear infinite;
+}
+
+.cloud-2 {
+    width: 200px;
+    top: 25%;
+    left: -210px;
+    animation: cloudDrift 60s linear infinite;
+    animation-delay: -20s;
+}
+
+.cloud-3 {
+    width: 180px;
+    top: 8%;
+    left: -190px;
+    animation: cloudDrift 55s linear infinite;
+    animation-delay: -35s;
+}
+
+@keyframes cloudDrift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(100vw + 300px)); }
+}
+
+/* === Mountain SVG layers === */
+.mtn-far {
+    bottom: 0;
+    top: auto;
+    height: 60%;
+    z-index: 1;
+}
+
+.mtn-mid {
+    bottom: 0;
+    top: auto;
+    height: 55%;
+    z-index: 2;
+}
+
+.mtn-near {
+    bottom: 0;
+    top: auto;
+    height: 50%;
+    z-index: 3;
+}
+
+/* === Pine trees === */
+.mtn-trees {
+    bottom: 0;
+    top: auto;
+    height: 20%;
+    z-index: 4;
+}
+
+.mtn-trees svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* === Floating particles (fireflies) === */
+.mtn-particles {
+    z-index: 5;
+}
+
+.mtn-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: particleFloat 8s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .mtn-particle {
+    background: rgba(52, 211, 153, 0.6);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+@keyframes particleFloat {
+    0% { transform: translate(0, 0) scale(0); opacity: 0; }
+    15% { opacity: 1; transform: translate(10px, -15px) scale(1); }
+    50% { transform: translate(-20px, -40px) scale(0.8); opacity: 0.6; }
+    85% { transform: translate(15px, -25px) scale(1); opacity: 1; }
+    100% { transform: translate(0, 0) scale(0); opacity: 0; }
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 768px) {
+    .cloud-1 { width: 150px; }
+    .cloud-2 { width: 120px; }
+    .cloud-3 { width: 100px; }
+
+    .aurora-band-1 { width: 300px; height: 80px; }
+    .aurora-band-2 { width: 250px; height: 60px; }
+    .aurora-band-3 { width: 200px; height: 40px; }
+
+    .mtn-trees { height: 15%; }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+    .cloud,
+    .star,
+    .mtn-particle,
+    .aurora-band {
+        animation: none !important;
+    }
+    .star { opacity: 0.5; }
+    .mtn-particle { display: none; }
+}

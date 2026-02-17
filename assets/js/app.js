@@ -10,6 +10,8 @@ import { initSearch } from './search.js';
 import { initScrollAnimations } from './scroll-animations.js';
 import { initReadingProgress } from './reading-progress.js';
 import { initArticles } from './articles.js';
+import { initMountainScene } from './mountain-scene.js';
+import { initShareButtons } from './share.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Load shared components (header, footer)
@@ -31,8 +33,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else if (page === 'article') {
         await initArticles({ mode: 'single' });
         initReadingProgress();
+        initShareButtons();
+    } else if (page === 'archive') {
+        await initArticles({ mode: 'archive', perPage: 20 });
     }
 
     // 4. Scroll animations (all pages)
     initScrollAnimations();
+
+    // 5. Initialize mountain scene animations (home page)
+    if (page === 'home') {
+        initMountainScene();
+    }
 });

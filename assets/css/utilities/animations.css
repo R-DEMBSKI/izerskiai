@@ -1,12 +1,12 @@
 /* ============================================
-   Animations & Transitions
+   Animations & Transitions - Enhanced
    ============================================ */
 
 /* === Scroll reveal === */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
+    transform: translateY(24px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .animate-on-scroll.revealed {
@@ -22,11 +22,29 @@
 .articles-grid .article-card.animate-on-scroll:nth-child(5) { transition-delay: 320ms; }
 .articles-grid .article-card.animate-on-scroll:nth-child(6) { transition-delay: 400ms; }
 
-/* === Hero entrance === */
+/* Staggered section cards */
+.section-highlights .section-card.animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+.section-highlights .section-card.animate-on-scroll:nth-child(2) { transition-delay: 120ms; }
+.section-highlights .section-card.animate-on-scroll:nth-child(3) { transition-delay: 240ms; }
+.section-highlights .section-card.animate-on-scroll:nth-child(4) { transition-delay: 360ms; }
+
+/* Archive items stagger */
+.archive-list .archive-item.animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(2) { transition-delay: 50ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(3) { transition-delay: 100ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(4) { transition-delay: 150ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(5) { transition-delay: 200ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(6) { transition-delay: 250ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(7) { transition-delay: 300ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(8) { transition-delay: 350ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(9) { transition-delay: 400ms; }
+.archive-list .archive-item.animate-on-scroll:nth-child(10) { transition-delay: 450ms; }
+
+/* === Hero entrance - Enhanced with stagger === */
 @keyframes heroFadeUp {
     from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(28px);
     }
     to {
         opacity: 1;
@@ -34,9 +52,27 @@
     }
 }
 
-.hero-title { animation: heroFadeUp 0.7s ease-out 0.15s both; }
-.hero-subtitle { animation: heroFadeUp 0.7s ease-out 0.3s both; }
-.hero-badge { animation: heroFadeUp 0.7s ease-out 0.45s both; }
+@keyframes heroFadeScale {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-badge { animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+.hero-title { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.hero-subtitle { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+.hero-actions { animation: heroFadeScale 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+.hero-stats { animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both; }
+
+/* Section hero animations */
+.section-hero h1 { animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.section-hero p { animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+.section-hero .agent-badges { animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
 
 /* === Skeleton loading pulse === */
 @keyframes skeletonPulse {
@@ -68,6 +104,35 @@
 .skeleton-bar-sm { width: 60%; height: 12px; }
 .skeleton-bar-md { width: 80%; height: 16px; }
 .skeleton-bar-lg { width: 100%; height: 20px; }
+
+/* === Smooth counter animation === */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Link underline animation === */
+.footer-nav a,
+.footer-info a {
+    position: relative;
+}
+
+.footer-nav a::after,
+.footer-info a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after,
+.footer-info a:hover::after {
+    width: 100%;
+}
 
 /* === Respect user preferences === */
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,5 @@
 /* ============================================
-   Home Page Specific Styles
+   Home Page Specific Styles - Enhanced
    ============================================ */
 
 /* === Featured article section === */
@@ -25,7 +25,15 @@
     margin-bottom: 4px;
 }
 
-/* === Section highlights === */
+/* === Section subtitle enhanced === */
+.section-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    max-width: 500px;
+}
+
+/* === Section highlights - 4-col grid === */
 .section-highlights {
     display: grid;
     grid-template-columns: 1fr;
@@ -33,8 +41,19 @@
     margin-bottom: var(--space-12);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .section-highlights {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (min-width: 1024px) {
+    .section-highlights {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* === Section card icon color for aktualnosci === */
+.section-card-icon[data-section="aktualnosci"] {
+    background: rgba(37, 99, 235, 0.1);
 }

@@ -1,0 +1,216 @@
+/* ============================================
+   Share Bar - Article Sharing Component
+   ============================================ */
+
+.share-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle gradient accent bar at top */
+.share-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--color-news),
+        var(--color-history),
+        var(--color-tourism),
+        var(--color-opinion)
+    );
+    opacity: 0.6;
+}
+
+.share-bar-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-muted);
+}
+
+.share-bar-label svg {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+}
+
+/* === Share buttons === */
+.share-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.share-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.share-btn svg {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Platform-specific hover colors */
+.share-btn--facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    color: #ffffff;
+}
+
+.share-btn--twitter:hover {
+    background: #0f1419;
+    border-color: #0f1419;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .share-btn--twitter:hover {
+    background: #e7e9ea;
+    border-color: #e7e9ea;
+    color: #0f1419;
+}
+
+.share-btn--linkedin:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+    color: #ffffff;
+}
+
+.share-btn--copy:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.share-btn--copy.copied {
+    background: #059669;
+    border-color: #059669;
+    color: #ffffff;
+}
+
+.share-btn--native:hover {
+    background: var(--color-bg-hover);
+    color: var(--color-text-primary);
+}
+
+/* === Ripple effect === */
+.share-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: shareRipple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes shareRipple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* === Toast notification === */
+.share-toast {
+    position: absolute;
+    bottom: calc(100% + var(--space-2));
+    right: var(--space-4);
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all var(--transition-base);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.share-toast::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-text-primary) transparent transparent transparent;
+}
+
+.share-toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+    .share-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .share-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .share-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .share-toast {
+        bottom: auto;
+        top: calc(100% + var(--space-2));
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+    .share-toast.visible {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .share-toast::after {
+        top: auto;
+        bottom: 100%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        border-color: transparent transparent var(--color-text-primary) transparent;
+    }
+}

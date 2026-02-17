@@ -205,8 +205,23 @@ function renderFullArticle(article, container) {
     const agent = getAgentInfo(article.author);
     const categoryName = CATEGORY_NAMES[article.category] || article.category;
 
-    // Update page title
+    // Update page title and OG meta for sharing
     document.title = `${article.title} | Izerski.AI`;
+
+    // Update meta tags for social sharing
+    const updateMeta = (property, content) => {
+        let meta = document.querySelector(`meta[property="${property}"]`);
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('property', property);
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
+    };
+    updateMeta('og:title', article.title);
+    updateMeta('og:description', article.excerpt || '');
+    updateMeta('og:type', 'article');
+    updateMeta('og:url', window.location.href);
 
     container.innerHTML = `
         <article>
@@ -317,6 +332,49 @@ async function renderRelatedArticles(category, currentSlug) {
     }
 }
 
+// === Archive item renderer ===
+function createArchiveItem(article) {
+    const agent = getAgentInfo(article.author);
+    const categoryName = CATEGORY_NAMES[article.category] || article.category;
+
+    const item = document.createElement('a');
+    item.href = `artykul.html?slug=${article.slug}`;
+    item.className = 'archive-item animate-on-scroll';
+
+    item.innerHTML = `
+        <div class="archive-item-header">
+            <span class="archive-item-category" data-category="${article.category}">${categoryName}</span>
+            <span class="archive-item-date">${formatDate(article.date)}</span>
+            <span class="archive-item-meta">
+                <span class="agent-avatar" aria-hidden="true">${agent.avatar}</span>
+                ${agent.name} &bull; ${article.readingTime || 3} min
+            </span>
+        </div>
+        <h3 class="archive-item-title">${article.title}</h3>
+        <p class="archive-item-excerpt">${article.excerpt}</p>
+    `;
+
+    return item;
+}
+
+function renderArchiveItems(articles, container) {
+    if (!container) return;
+    container.innerHTML = '';
+    if (articles.length === 0) {
+        container.innerHTML = `
+            <div class="archive-empty">
+                <div class="archive-empty-icon">📭</div>
+                <h3>Brak artykułów</h3>
+                <p>W tej kategorii nie ma jeszcze artykułów.</p>
+            </div>
+        `;
+        return;
+    }
+    articles.forEach(article => {
+        container.appendChild(createArchiveItem(article));
+    });
+}
+
 // === Main init ===
 export async function initArticles(config) {
     const { mode, section, limit, perPage } = config;
@@ -362,6 +420,60 @@ export async function initArticles(config) {
         }
 
         renderPage(1);
+    }
+
+    if (mode === 'archive') {
+        const articles = await fetchArticleIndex();
+        let activeFilter = 'all';
+        const itemsPerPage = perPage || 20;
+
+        function getFiltered() {
+            if (activeFilter === 'all') return articles;
+            return articles.filter(a => a.category === activeFilter);
+        }
+
+        function renderArchivePage(page) {
+            const filtered = getFiltered();
+            const start = (page - 1) * itemsPerPage;
+            const pageArticles = filtered.slice(start, start + itemsPerPage);
+
+            const countEl = document.getElementById('article-count');
+            if (countEl) {
+                countEl.textContent = `${filtered.length} ${getArticleWord(filtered.length)}`;
+            }
+
+            renderArchiveItems(pageArticles, document.getElementById('archive-list'));
+            renderPagination(filtered.length, page, itemsPerPage,
+                document.getElementById('pagination'), renderArchivePage);
+
+            // Re-init scroll animations for new items
+            if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+                document.querySelectorAll('#archive-list .animate-on-scroll:not(.revealed)').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.archive-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.archive-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeFilter = btn.dataset.filter;
+                renderArchivePage(1);
+            });
+        });
+
+        renderArchivePage(1);
     }
 
     if (mode === 'single') {

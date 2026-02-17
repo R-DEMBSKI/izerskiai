@@ -41,9 +41,9 @@
     content: '';
     display: block;
     width: 60px;
-    height: 4px;
-    background: var(--color-accent);
-    border-radius: 2px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), rgba(var(--color-accent-rgb), 0.3));
+    border-radius: var(--radius-full);
     margin-top: var(--space-3);
 }
 
